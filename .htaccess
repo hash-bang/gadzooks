@@ -1,0 +1,5 @@
+<FilesMatch "\.(png|js|json|html)$">
+	Header set Access-Control-Allow-Origin "*"
+	Header set Access-Control-Allow-Methods "GET"
+	Header set Access-Control-Allow-Headers "X-Requested-With"
+</FilesMatch>
