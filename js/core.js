@@ -41,13 +41,15 @@ $(function() {
 		*/
 		method: 'unknown',
 
+
 		/**
 		* Load one or multiple zook files
-		* @param string,array file Either the single file or array of files to load
+		* @param string|array file Either the single file or array of files to load
 		* @returns object This chainable object
 		* @see loaded
 		*/
 		load: function(file) {
+			// Sanity checks {{{
 			if (!$.gadzooks.ready) { // Not yet ready - defer until we are
 				$(document).one('gadzooks.ready', function() {
 					$.gadzooks.load(file);
@@ -59,8 +61,62 @@ $(function() {
 				});
 				return this;
 			}
-
+			// }}}
+			var id = file.split('/').reverse()[0].replace(/\.html/, ''); // Extract basename from file
 			console.log('$.gadzooks.load(', file, ')');
+
+			$.ajax({
+				type: 'GET',
+				dataType: 'text',
+				cache: true,
+				url: file,
+				error: function(err) {
+					console.log('Error while loading zook', err);
+				},
+				success: function(content) {
+					var item = null; // Gets replaced with the Gadzooks package object on load
+					var dom = $("<div>" + content + "</div>"); // jQuery gets angry unless there is only one parent
+					$.debug = dom;
+					dom.find('script[type="application/zook"]').first().each(function(offset, raw) {
+						item = JSON.parse($(raw).html());
+					}).remove();
+					if (!item) throw new Error("No <script type=\"gadzooks/package\">{ ... }</script> element found in" + file);
+					item.id = id;
+					item.dom = dom;
+					$.gadzooks.loaded[id] = item;
+					$.gadzooks.setState(id);
+				},
+			});
+		},
+
+		/**
+		* Set whether a zook is enabled or not
+		* @param id string The ID of the zook in $.gadzooks.loaded
+		* @param null|boolean state Either the implicit state to set to or null for defaults (or user setting if it overrides)
+		* @param null|bool save Whether to save the setting after setting
+		*/
+		setState: function(id, state, save) {
+			var actualState;
+			var userSetting = localStorage.getItem('gadzooks.' + id + '.enabled');
+
+			// Sanity checks - Where do we get state from {{{
+			if (_.isBoolean(state)) { // Being given an implicit state
+				actualState = state;
+			} else if (_.isString(userSetting)) { // User provides state (annoyingly as a string)
+				actualState = userSetting == 'true' ? true : false;
+			} else if (_.has($.gadzooks.loaded[id], 'default')) { // Zook provides default state
+				actualState = $.gadzooks.loaded[id].default;
+			}
+			// }}}
+
+			// Actually do something?
+			if (actualState && !$.gadzooks.loaded[id].state) {
+				$.gadzooks._zookLoad(id);
+			} else if (!actualState && $.gadzooks.loaded[id].state) {
+				$.gadzooks._zookUnLoad(id);
+			}
+
+			if (save) localStorage.setItem('gadzooks.' + id + '.enabled', actualState);
 		},
 
 		/**
@@ -96,6 +152,33 @@ $(function() {
 			initCheck();
 			return this;
 		},
+
+		// Zook workers {{{
+		/**
+		* Actually load a zook
+		* @access private
+		* @param string id The ID of the zook to load
+		* @returns object This chainable object
+		* @see setState()
+		*/
+		_zookLoad: function(id) {
+			console.log('$.gadzooks._zookLoad(' + id + ')');
+			return this;
+		},
+
+		/**
+		* Actually unload a zook
+		* @access private
+		* @param string id The ID of the zook to load
+		* @returns object This chainable object
+		* @see setState()
+		*/
+		_zookUnLoad: function(id) {
+			console.log('$.gadzooks._zookUnLoad(' + id + ')');
+			console.log('UNSUPPORTED ACTION');
+			return this;
+		},
+		// }}}
 	};
 	// }}}
 
