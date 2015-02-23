@@ -69,18 +69,23 @@ $(function() {
 				type: 'GET',
 				dataType: 'text',
 				cache: true,
-				url: file,
+				url: $.gadzooks.url + '/' + file,
 				error: function(err) {
 					console.log('Error while loading zook', err);
 				},
 				success: function(content) {
 					var item = null; // Gets replaced with the Gadzooks package object on load
 					var dom = $("<div>" + content + "</div>"); // jQuery gets angry unless there is only one parent
-					dom.attr('id', 'zook-' + id);
-					dom.find('script[type="application/zook"]').first().each(function(offset, raw) {
-						item = JSON.parse($(raw).html());
-					}).remove();
+					$.debug = dom;
+					// Extract the package JSON blob from the DOM {{{
+					var domPackage = dom.find('script[type="application/zook"]');
+					if (domPackage)
+						domPackage.each(function(offset, raw) {
+							item = JSON.parse($(raw).html());
+						}).remove();
 					if (!item) throw new Error("No <script type=\"gadzooks/package\">{ ... }</script> element found in" + file);
+					// }}}
+					dom.attr('id', 'zook-' + id);
 					item.id = id;
 					item.dom = dom;
 					$.gadzooks.loaded[id] = item;
