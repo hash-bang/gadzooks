@@ -76,7 +76,7 @@ $(function() {
 				success: function(content) {
 					var item = null; // Gets replaced with the Gadzooks package object on load
 					var dom = $("<div>" + content + "</div>"); // jQuery gets angry unless there is only one parent
-					$.debug = dom;
+					dom.attr('id', 'zook-' + id);
 					dom.find('script[type="application/zook"]').first().each(function(offset, raw) {
 						item = JSON.parse($(raw).html());
 					}).remove();
@@ -153,6 +153,30 @@ $(function() {
 			return this;
 		},
 
+		// Helper functions {{{
+		/**
+		* Helper function to enable a zook
+		* @param string id The zook to be enabled
+		* @returns object This chainable object
+		* @see setState
+		*/
+		enable: function(id) {
+			$.gadzooks.setState(id, true, true);
+			return this;
+		},
+
+		/**
+		* Helper function to disable a zook
+		* @param string id The zook to be enabled
+		* @returns object This chainable object
+		* @see setState
+		*/
+		disable: function(id) {
+			$.gadzooks.setState(id, false, true);
+			return this;
+		},
+		// }}}
+
 		// Zook workers {{{
 		/**
 		* Actually load a zook
@@ -163,6 +187,8 @@ $(function() {
 		*/
 		_zookLoad: function(id) {
 			console.log('$.gadzooks._zookLoad(' + id + ')');
+			$('head').append($.gadzooks.loaded[id].dom);
+			$.gadzooks.loaded[id].state = true;
 			return this;
 		},
 
@@ -175,7 +201,8 @@ $(function() {
 		*/
 		_zookUnLoad: function(id) {
 			console.log('$.gadzooks._zookUnLoad(' + id + ')');
-			console.log('UNSUPPORTED ACTION');
+			$('head').find('#zook-' + id).remove();
+			$.gadzooks.loaded[id].state = false;
 			return this;
 		},
 		// }}}
@@ -186,7 +213,7 @@ $(function() {
 		.init()
 		.load([
 			// Load individual zook files {{{
-				'zooks/test.html'
+			'zooks/test.html'
 			// }}}
 		]);
 });
