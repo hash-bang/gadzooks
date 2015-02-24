@@ -69,7 +69,14 @@ $(document).on('click', '.gadzooks-option input[type=checkbox]', function() {
 	color: #333;
 	margin: 15px 10px;
 }
+
+#gadzooks-options .gadzooks-options-controls {
+	text-align: center;
+}
 </style>
 <div id="gadzooks-options" style="display: none">
 	<div class="gadzooks-options-content"></div>
+	<div class="gadzooks-options-controls">
+		<input type="button" value="CLOSE" onClick="$.gadzooks.options()" class="standard_btn"/>
+	</div>
 </div>
