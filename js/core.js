@@ -225,9 +225,11 @@ $(function() {
 			// Load individual zook files {{{
 			"zooks/back-bigger.html",
 			"zooks/back-center.html",
+			"zooks/disable-select.html",
 			"zooks/display-challenge-details.html",
 			"zooks/fagin.html",
 			"zooks/loader.html",
+			"zooks/mobile.html",
 			"zooks/move-graphic.html",
 			"zooks/options-tab.html",
 			"zooks/options.html",
