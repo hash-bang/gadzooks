@@ -218,7 +218,24 @@ $(function() {
 		.init()
 		.load([
 			// Load individual zook files {{{
-			'zooks/test.html'
+			"zooks/back-bigger.html",
+			"zooks/back-center.html",
+			"zooks/display-challenge-details.html",
+			"zooks/fagin.html",
+			"zooks/loader.html",
+			"zooks/move-graphic.html",
+			"zooks/remove-footers.html",
+			"zooks/remove-headers.html",
+			"zooks/remove-latest-news.html",
+			"zooks/remove-prompts.html",
+			"zooks/remove-rhb.html",
+			"zooks/remove-share-feed.html",
+			"zooks/rotated-tabs.html",
+			"zooks/stats-cozy.html",
+			"zooks/stats-move-right.html",
+			"zooks/stats-no-icons.html",
+			"zooks/stretchy.html",
+			"zooks/test.html"
 			// }}}
 		]);
 });
