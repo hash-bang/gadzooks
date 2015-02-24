@@ -230,6 +230,7 @@ $(function() {
 			"zooks/display-challenge-details.html",
 			"zooks/fagin.html",
 			"zooks/help-disable.html",
+			"zooks/help-remove-tab.html",
 			"zooks/loader.html",
 			"zooks/mobile.html",
 			"zooks/move-graphic.html",
