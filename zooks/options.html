@@ -12,7 +12,8 @@ $.gadzooks.options = function() {
 
 	if (!$.gadzooks.optionsLoaded) {
 		$.each($.gadzooks.loaded, function(id, zook) {
-			// Angular, Angular, My Kingdom for Angular!
+			// Angular, Angular, My Kingdom for the use of Angular!
+			if (zook.hide) return; // If hidden - skip
 			$('.gadzooks-options-content').append($(
 				'<div class="gadzooks-option" data-zook="' + zook.id + '">' +
 					(!zook.forced ? ('<div class="gz-check"><input type="checkbox"' + (zook.state ? ' checked="checked"' : '') + '/><label></label></div>') : '<div class="gz-check-disabled">Locked</div>') +
