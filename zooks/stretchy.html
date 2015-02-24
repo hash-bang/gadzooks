@@ -1,0 +1,54 @@
+<script type="application/zook">
+{
+	"default": false,
+	"title": "Stretch the main interface",
+	"description": "Resizes the main interface to fit the browser width"
+}
+</script>
+<style>
+.tab_content_bg {
+	background-repeat: repeat;
+	width: calc(100% - 220px);
+}
+
+.outer_wrapper, .rhs_col, .content_lhs, .tab_content {
+	width: 100%;
+}
+
+.content_lhs .content {
+	padding: 0;
+	margin: 0;
+	float: none;
+}
+
+.storylet {
+	width: calc(100% - 45px);
+}
+
+.storylet_flavour_text {
+	width: calc(100% - 60px);
+}
+
+/* BUGFIX: .storylet_rhs gets screwed up {{{ */
+.storylet-select .storylet_rhs {
+	float: left;
+	margin-left: 90px;
+}
+/* }}} */
+/* BUGFIX: Shop gets screwed up {{{ */
+.shop-items {
+	float: left;
+	width: calc(100% - 230px);
+}
+/* }}} */
+/* BUGFIX: Travel button gets screwed up {{{ */
+.toggle-map {
+	margin-right: 30px;
+}
+/* }}} */
+/* BUGFIX: Map now needs centering {{{ */
+#topMap {
+	margin: 0 auto;
+}
+/* }}} */
+</style>

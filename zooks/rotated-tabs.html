@@ -1,0 +1,26 @@
+<script type="application/zook">
+{
+	"default": false,
+	"title": "Rotate tab bar to left",
+	"description": "Saves vertical space by moving the tab bar to the left hand side"
+}
+</script>
+<style>
+#tabnav {
+	position: absolute;
+	left: -237px;
+	top: 300px;
+	transform: rotate(270deg);
+}
+
+.tab_content_bg {
+	margin-left: 36px;
+	min-height: 650px;
+}
+
+/* BUGFIX: Switch tabs so 'Story' is first i.e. backwards order {{{ */
+#tabnav > li {
+	float: right;
+}
+/* }}} */
+</style>
