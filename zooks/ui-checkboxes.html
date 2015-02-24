@@ -7,7 +7,7 @@
 </script>
 <script>
 $(function() {
-	$(document).on('click', '.gz-check', function() {
+	$('.gz-check').live('click', function() {
 		var cb = $(this).find('[type=checkbox]').first();
 		if (cb.is(':checked')) {
 			cb.prop('checked', false);

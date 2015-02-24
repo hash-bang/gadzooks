@@ -22,7 +22,7 @@ $.gadzooks.options = function() {
 	$('#gadzooks-options').toggle();
 };
 
-$(document).on('click', '.gadzooks-option input[type=checkbox]', function() {
+$('.gadzooks-option input[type=checkbox]').live('click', function() {
 	$.gadzooks.setState($(this).closest('.gadzooks-option').data('zook'), !$(this).is(':checked'), true);
 });
 </script>
@@ -74,6 +74,13 @@ $(document).on('click', '.gadzooks-option input[type=checkbox]', function() {
 
 #gadzooks-options .gadzooks-options-controls {
 	text-align: center;
+}
+
+#gadzooks-options .gadzooks-options-controls > input {
+	font-size: 20px;
+	margin: 0 auto;
+	height: 40px;
+	padding: 10px 20px !important;
 }
 </style>
 <div id="gadzooks-options" style="display: none">
