@@ -226,6 +226,8 @@ $(function() {
 			"zooks/fagin.html",
 			"zooks/loader.html",
 			"zooks/move-graphic.html",
+			"zooks/options-tab.html",
+			"zooks/options.html",
 			"zooks/remove-footers.html",
 			"zooks/remove-headers.html",
 			"zooks/remove-latest-news.html",
@@ -237,7 +239,8 @@ $(function() {
 			"zooks/stats-move-right.html",
 			"zooks/stats-no-icons.html",
 			"zooks/stretchy.html",
-			"zooks/test.html"
+			"zooks/test.html",
+			"zooks/ui-checkboxes.html"
 			// }}}
 		]);
 });
