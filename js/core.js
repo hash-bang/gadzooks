@@ -104,6 +104,9 @@ $(function() {
 			var actualState;
 			var userSetting = localStorage.getItem('gadzooks.' + id + '.enabled');
 
+			if (!$.gadzooks.loaded[id])
+				throw new Error('Unknown zook: ' + id);
+
 			// Sanity checks - Where do we get state from {{{
 			if ($.gadzooks.loaded[id].forced) { // Always force this to be enabled
 				actualState = true;
