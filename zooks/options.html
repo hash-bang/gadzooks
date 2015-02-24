@@ -7,19 +7,22 @@
 }
 </script>
 <script>
-$.each($.gadzooks.loaded, function(id, zook) {
-	// Angular, Angular, My Kingdom for Angular!
-	$('.gadzooks-options-content').append($(
-		'<div class="gadzooks-option" data-zook="' + zook.id + '">' +
-			(!zook.forced ? ('<div class="gz-check"><input type="checkbox"' + (zook.state ? ' checked="checked"' : '') + '/><label></label></div>') : '<div class="gz-check-disabled">Locked</div>') +
-			'<h2>' + zook.title + '</h2>' +
-			'<p>' + zook.description + '</p>' +
-		'</div>'
-	));
-});
-
 $.gadzooks.options = function() {
 	$('#gadzooks-options').toggle();
+
+	if (!$.gadzooks.optionsLoaded) {
+		$.each($.gadzooks.loaded, function(id, zook) {
+			// Angular, Angular, My Kingdom for Angular!
+			$('.gadzooks-options-content').append($(
+				'<div class="gadzooks-option" data-zook="' + zook.id + '">' +
+					(!zook.forced ? ('<div class="gz-check"><input type="checkbox"' + (zook.state ? ' checked="checked"' : '') + '/><label></label></div>') : '<div class="gz-check-disabled">Locked</div>') +
+					'<h2>' + zook.title + '</h2>' +
+					'<p>' + zook.description + '</p>' +
+				'</div>'
+			));
+		});
+		$.gadzooks.optionsLoaded = true;
+	}
 };
 
 $('.gadzooks-option input[type=checkbox]').live('change', function() {
