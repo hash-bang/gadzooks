@@ -194,7 +194,7 @@ $(function() {
 		*/
 		_zookLoad: function(id) {
 			console.log('$.gadzooks._zookLoad(' + id + ')');
-			$('head').append($.gadzooks.loaded[id].dom);
+			$('body').append($.gadzooks.loaded[id].dom);
 			$.gadzooks.loaded[id].state = true;
 			return this;
 		},
@@ -208,7 +208,7 @@ $(function() {
 		*/
 		_zookUnLoad: function(id) {
 			console.log('$.gadzooks._zookUnLoad(' + id + ')');
-			$('head').find('#zook-' + id).remove();
+			$('body').find('#zook-' + id).remove();
 			$.gadzooks.loaded[id].state = false;
 			return this;
 		},
