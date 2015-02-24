@@ -1,10 +1,10 @@
 /**
-* Gadzooks
+* Gadzooks!
 * A miscellany of adornments, accoutrements and other such trappings to Fallen London
 *
 * Herewith a package injection system which provides HTML, CSS and script support via a single loader
 *
-* This system is in no way associated with Failbetter games and provides absolutely no support for its use
+* Gadzooks! is in no way associated with Failbetter games and provides absolutely no support for its use
 * Here be dragons, and so forth.
 *
 * @author Matt Carter <m@ttcarter.com>
@@ -18,7 +18,7 @@ $(function() {
 		* This must sync with inject.js
 		* @var string
 		*/
-		url: 'http://localhost',
+		url: 'http://gadzooks.ap01.aws.af.cm',
 
 		/**
 		* Hash of loaded objects
