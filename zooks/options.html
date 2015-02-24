@@ -1,0 +1,75 @@
+<script type="application/zook">
+{
+	"forced": true,
+	"title": "Gadzooks options configurator",
+	"description": "Toggle Gadzook options to your hearts content via a snazzy popup",
+	"requires": ["core-angular"]
+}
+</script>
+<script>
+$.each($.gadzooks.loaded, function(id, zook) {
+	// Angular, Angular, My Kingdom for Angular!
+	$('.gadzooks-options-content').append($(
+		'<div class="gadzooks-option" data-zook="' + zook.id + '">' +
+			(!zook.forced ? ('<div class="gz-check"><input type="checkbox"' + (zook.state ? ' checked="checked"' : '') + '/><label></label></div>') : '<div class="gz-check-disabled">Locked</div>') +
+			'<h2>' + zook.title + '</h2>' +
+			'<p>' + zook.description + '</p>' +
+		'</div>'
+	));
+});
+
+$.gadzooks.options = function() {
+	$('#gadzooks-options').toggle();
+};
+
+$(document).on('click', '.gadzooks-option input[type=checkbox]', function() {
+	$.gadzooks.setState($(this).closest('.gadzooks-option').data('zook'), !$(this).is(':checked'), true);
+});
+</script>
+<style>
+#gadzooks-options {
+	position: fixed;
+	background: #333;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url(http://images.echobazaar.failbettergames.com.s3.amazonaws.com/tabs/parchtile.jpg);
+	padding: 20px;
+	overflow-y: auto;
+}
+
+#gadzooks-options .gadzooks-option {
+	margin-bottom: 10px;
+	min-height: 50px;
+	border-color: #94856E;
+	box-shadow: 0 2px 3px rgba(0,0,0,0.3), inset 0 1px rgba(255,255,255,0.3);
+	border: 1px solid black;
+	border-radius: 2px;
+	background: #d8d2c9;
+	padding: 10px;
+}
+
+#gadzooks-options .gadzooks-option h2 {
+	margin: 0 0 0.2em 0;
+	font-size: 0.9em;
+}
+
+#gadzooks-options .gadzooks-option p {
+	margin: 5px 0;
+}
+
+#gadzooks-options .gadzooks-option .gz-check {
+	float: right;
+	margin: 10px 0;
+}
+
+#gadzooks-options .gadzooks-option .gz-check-disabled {
+	float: right;
+	color: #333;
+	margin: 15px 10px;
+}
+</style>
+<div id="gadzooks-options" style="display: none">
+	<div class="gadzooks-options-content"></div>
+</div>
