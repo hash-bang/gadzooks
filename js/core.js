@@ -105,7 +105,9 @@ $(function() {
 			var userSetting = localStorage.getItem('gadzooks.' + id + '.enabled');
 
 			// Sanity checks - Where do we get state from {{{
-			if (_.isBoolean(state)) { // Being given an implicit state
+			if ($.gadzooks.loaded[id].forced) { // Always force this to be enabled
+				actualState = true;
+			} else if (_.isBoolean(state)) { // Being given an implicit state
 				actualState = state;
 			} else if (_.isString(userSetting)) { // User provides state (annoyingly as a string)
 				actualState = userSetting == 'true' ? true : false;
