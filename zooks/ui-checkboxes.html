@@ -8,13 +8,13 @@
 <script>
 $(function() {
 	$('.gz-check').live('click', function() {
-		var cb = $(this).find('[type=checkbox]').first();
+		var cb = $(this).children('[type=checkbox]');
 		if (cb.is(':checked')) {
-			cb.prop('checked', false);
+			cb.attr('checked', false);
 		} else {
-			cb.prop('checked', true);
+			cb.attr('checked', true);
 		}
-		cb.trigger('click');
+		cb.trigger('change');
 	});
 });
 </script>
