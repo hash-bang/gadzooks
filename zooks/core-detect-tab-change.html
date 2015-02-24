@@ -1,0 +1,35 @@
+<script type="application/zook">
+{
+	"hide": true,
+	"forced": true,
+	"title": "Core - Detect a tab change and raise an event",
+	"description": "This zook detects when the user changes the active tab within the main interface and rasies a 'gadzooks.tabchange' + 'gadzooks.tab.*' events"
+}
+</script>
+<script>
+$('#tabnav a').live('click', function() {
+	var lookup = {
+		'storyTab': 'story',
+		'homeTab': 'messages',
+		'meTab': 'myself',
+		'bazaarTab': 'bazaar',
+		'fateTab': 'nex',
+		'helpTab': 'help',
+		'gadzooksTab': 'gadzooks',
+	};
+
+	var tab = (lookup[$(this).attr('id')]) ? lookup[$(this).attr('id')] : 'unknown';
+
+	// Setup a watcher until the tab content loads
+	var loadChecker = function() {
+		if ($('#mainContentViaAjax').html()) {
+			$(document)
+				.trigger('gadzooks.tabchange', {tab: tab})
+				.trigger('gadzooks.tab.' + tab);
+		} else {
+			setTimeout(loadChecker, 1000);
+		}
+	};
+	setTimeout(loadChecker, 100);
+});
+</script>
