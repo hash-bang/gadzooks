@@ -12,7 +12,7 @@ How to use
 1. Drag the bellow bookmarklet to your bookmarks.
 2. Open the [Fallen London](http://fallenlondon.storynexus.com) website
 3. Open the bookmarklet
-4. Configure Gadzooks! to your hearts content. By default a new tab should be created allowing access to the Gadzooks! options screen.
+4. Configure Gadzooks! to your hearts content. By default a new tab should be created allowing access to the Gadzooks! options screen or you can press F12.
 
 
 **Bookmarklet**
@@ -42,9 +42,19 @@ FAQ
 In a way yes. If you have noticed an error please [create a ticket](https://github.com/hash-bang/gadzooks/issues) on the Gadzooks! GitHub page. **DO NOT** bother Failbetter games about this. We are in no way affiliated with the original creators of FL and them receiving complaints about our module will probably end up in someone getting mad.
 
 
-**I have a great idea for a new Zook**
+**Why 'Gadzooks'?**
 
-Thats great, file it in the [ticket tracker](https://github.com/hash-bang/gadzooks/issues) as a suggestion and we'll see what we can do.
+Its a shortened version of 'Gods Hooks' (the nails from the crucifixion). Since it hooks into an existing game the pun was too much to resist.
+
+
+**Can I cheat using Gadzooks?**
+
+No. FL is *mostly* server based. Its not possible to alter the state of your character, inventory or anything like that without going though the server.
+
+
+**I have a great idea for a new Zook (a plugin)**
+
+Thats great! File it in the [ticket tracker](https://github.com/hash-bang/gadzooks/issues) as a suggestion and we'll see what we can do.
 
 You may also wish to check out the [zook tips](zooks.md) for some tips on writing Zooks.
 
