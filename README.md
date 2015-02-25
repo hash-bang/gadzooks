@@ -17,9 +17,7 @@ How to use
 
 **Bookmarklet**
 
-[Gadzooks!](javascript:$('body').append('<script src=http://gadzooks.ap01.aws.af.cm/inject.js></script>'))
-
-Or alternatively create a bookmark with the following URL: 
+Create a bookmark with the following URL: 
 
 ```
 javascript:$('body').append('<script src="http://gadzooks.ap01.aws.af.cm/inject.js"></script>')
