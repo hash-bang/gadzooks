@@ -35,6 +35,11 @@ Gadzooks! has a number of supported 'Zooks' which can provide functionality anyw
 
 FAQ
 ---
+**Does Gadzooks! work on mobile devices?**
+
+Absolutely. Use the same technique to load Gadzooks! via a bookmarklet and you get a fancy almost-an-app experience.
+
+
 **Is there any support for Gadzooks?**
 
 In a way yes. If you have noticed an error please [create a ticket](https://github.com/hash-bang/gadzooks/issues) on the Gadzooks! GitHub page. **DO NOT** bother Failbetter games about this. We are in no way affiliated with the original creators of FL and them receiving complaints about our module will probably end up in someone getting mad.
