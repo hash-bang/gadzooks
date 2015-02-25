@@ -11,7 +11,7 @@
 	width: calc(100% - 220px);
 }
 
-.outer_wrapper, .rhs_col, .content_lhs, .tab_content {
+.outer_wrapper, .rhs_col, .content_lhs, .tab_content, #storyletsSection, .storylet, .storylet_flavour_text {
 	width: 100%;
 }
 
@@ -19,16 +19,18 @@
 	padding: 0;
 	margin: 0;
 	float: none;
+	width: 100%;
+	display: block;
 }
 
-.storylet {
-	width: calc(100% - 45px);
+/* BUGFIX: Dynamic sizing of background image {{{ */
+.area_hdr {
+	width: 100%;
+	max-width: 665px;
+	display: block;
+	background-size: 100%;
 }
-
-.storylet_flavour_text {
-	width: calc(100% - 60px);
-}
-
+/* }}} */
 /* BUGFIX: .storylet_rhs gets screwed up {{{ */
 .storylet-select .storylet_rhs {
 	float: left;
