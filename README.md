@@ -7,10 +7,22 @@ Gadzooks! is in no way associated with Failbetter games and provides absolutely 
 Here be dragons, and so forth.
 
 
-How to use
-----------
-1. Drag the bellow bookmarklet to your bookmarks.
-2. Open the [Fallen London](http://fallenlondon.storynexus.com) website
+Install via Greasemonkey
+-----------------------------
+1. Download GreaseMonkey for your preferred browser:
+	* **Chrome** - [TamperMonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
+	* **Firefox** - [GreaseMonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
+	* **Opera** [via JavaScript files](http://www.ghacks.net/2008/08/10/greasemonkey-in-opera/)
+	* **Safari** [via hacks](http://www.simplehelp.net/2007/11/14/how-to-run-greasemonkey-scripts-in-safari/)
+2. Install the script by [clicking here](https://raw2.github.com/hash-bang/gadzooks/master/gadzooks.greasemonkey.js)
+3. Visit the [Fallen London](http://fallenlondon.storynexus.com) website
+4. Configure Gadzooks! to your hearts content. By default a new tab should be created allowing access to the Gadzooks! options screen or you can press F12.
+
+
+Install via bookmarklet
+-----------------------
+1. Create a new bookmarklet with the below URL
+2. Visit the [Fallen London](http://fallenlondon.storynexus.com) website
 3. Open the bookmarklet
 4. Configure Gadzooks! to your hearts content. By default a new tab should be created allowing access to the Gadzooks! options screen or you can press F12.
 
