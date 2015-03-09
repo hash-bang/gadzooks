@@ -2,7 +2,7 @@
 // @name       Gadzooks
 // @namespace  https://github.com/hash-bang/gadzooks
 // @version    1.0
-// @description  Script to automatically save all results in a TripDatabase search to an RIS file.
+// @description  Gadzooks! for Fallen London
 // @include    http://fallenlondon.storynexus.com/Gap/*
 // @grant      none
 // @require    http://gadzooks.ap01.aws.af.cm/inject.js
