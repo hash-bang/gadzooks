@@ -227,6 +227,7 @@ $(function() {
 			"zooks/back-center.html",
 			"zooks/core-detect-tab-change.html",
 			"zooks/disable-select.html",
+			"zooks/display-card-frequency.html",
 			"zooks/display-challenge-details.html",
 			"zooks/echos-larger.html",
 			"zooks/fagin.html",
