@@ -14,7 +14,7 @@ Install via Greasemonkey
 	* **Firefox** - [GreaseMonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
 	* **Opera** [via JavaScript files](http://www.ghacks.net/2008/08/10/greasemonkey-in-opera/)
 	* **Safari** [via hacks](http://www.simplehelp.net/2007/11/14/how-to-run-greasemonkey-scripts-in-safari/)
-2. Install the script by [clicking here](https://github.com/hash-bang/gadzooks/raw/master/gadzooks.greasemonkey.js)
+2. Install the script by [clicking here](https://github.com/hash-bang/gadzooks/raw/master/gadzooks.greasemonkey.user.js)
 3. Visit the [Fallen London](http://fallenlondon.storynexus.com) website
 4. Configure Gadzooks! to your hearts content. By default a new tab should be created allowing access to the Gadzooks! options screen or you can press F12.
 
