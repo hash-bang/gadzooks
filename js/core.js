@@ -249,7 +249,6 @@ $(function() {
 			"zooks/stats-cozy.html",
 			"zooks/stats-move-right.html",
 			"zooks/stats-no-icons.html",
-			"zooks/stretchy.html",
 			"zooks/test.html",
 			"zooks/ui-checkboxes.html"
 			// }}}

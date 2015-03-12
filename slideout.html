@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Slideout Demo</title>
+	<meta http-equiv="cleartype" content="on">
+	<meta name="MobileOptimized" content="320">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="lib/snap.min.js"></script>
+</head>
+<body>
+<script>
+$(function() {
+	$.sidebars = new Snap({
+		element: document.getElementById('content'),
+		maxPosition: 100,
+		minPosition: -100
+	});
+	$(document)
+		.on('click', '.nav-toggle-left', function() {
+			if ($.sidebars.state().state == "left") {
+				$.sidebars.close();
+			} else {
+				$.sidebars.open('left');
+			}
+		})
+		.on('click', '.nav-toggle-right', function() {
+			if ($.sidebars.state().state == "right") {
+				$.sidebars.close();
+			} else {
+				$.sidebars.open('right');
+			}
+		});
+});
+</script>
+<style>
+body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.app .app-header {
+	overflow: hidden;
+	background: #fee65e;
+	border-bottom: solid 2px #ffaa42;
+	text-align: center;
+	text-shadow: 1px 1px 0 #fcfdf4;
+}
+
+.app .app-header h1 {
+	display: inline-block;
+	margin: 0;
+	font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+	line-height: 50px;
+	color: #e64a33;
+}
+
+.app .nav-toggle-left, .app .nav-toggle-right {
+	position: relative;
+	float: left;
+	display: block;
+	width: 50px;
+	height: 30px;
+	margin: 10px;
+	background: #fdef6e;
+	border: solid 1px rgba(230,74,51,0.35);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: inset 0 1px 0 #fcfdf4;
+	-moz-box-shadow: inset 0 1px 0 #fcfdf4;
+	box-shadow: inset 0 1px 0 #fcfdf4;
+	white-space: nowrap;
+	color: #e64a33;
+	line-height: 29px;
+}
+
+.app .app-header .nav-toggle-left {
+	float: left;
+}
+
+.app .app-header .nav-toggle-right {
+	float: right;
+}
+
+
+.snap-drawers {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: auto;
+	height: auto;
+}
+
+.snap-drawers .snap-drawer-left, .snap-drawers .snap-drawer-right {
+	position: absolute;
+	top: 0;
+	right: auto;
+	bottom: 0;
+	left: auto;
+	width: 100px;
+	height: auto;
+	overflow: auto;
+	background: #323949;
+	color: #eee;
+}
+
+.snap-drawers .snap-drawer-left {
+	left: -100px;
+	z-index: 1;
+}
+
+.snap-drawers .snap-drawer-right {
+	right: -100px;
+	z-index: 1;
+}
+
+.snap-content {
+	z-index: 2;
+}
+</style>
+
+<div id="content" class="app">
+	<div class="snap-drawers">
+		<div class="snap-drawer snap-drawer-left">
+			Left bar
+		</div>
+		<div class="snap-drawer snap-drawer-right">
+			Right bar
+		</div>
+	</div>
+
+	<div class="snap-content">
+		<header class="app-header">
+			<a class="nav-toggle-left" data-role="left">☰</a>
+			<h1>Title</h1>
+			<a class="nav-toggle-right" data-role="right">☰</a>
+		</header>
+		Hello World
+	</div>
+</div>
+
+</body>
+</html>

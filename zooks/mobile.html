@@ -6,12 +6,227 @@
 }
 </script>
 <script>
-$('head').append($(
-	'<meta http-equiv="Content-Language" content="en"/>' +
-	'<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>' +
-	'<meta name="google" value="notranslate"/>' +
-	'<meta name="apple-mobile-web-app-capable" content="yes"/>' +
-	'<meta name="apple-mobile-web-app-status-bar-style" content="yes"/>' +
-	'<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui"/>'
-));
+// Add meta tag stuff for mobile devices {{{
+$('head')
+	.append($(
+		'<meta http-equiv="Content-Language" content="en"/>' +
+		'<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>' +
+		'<meta name="google" value="notranslate"/>' +
+		'<meta name="apple-mobile-web-app-capable" content="yes"/>' +
+		'<meta name="apple-mobile-web-app-status-bar-style" content="yes"/>' +
+		'<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui"/>'
+	));
+// }}}
+$.getScript($.gadzooks.url + '/lib/snap.min.js', function() {
+	// Rearrange page {{{
+	var newStruct = $(
+		'<div id="content" class="app">' +
+			'<div class="snap-drawers">' +
+				'<div class="snap-drawer snap-drawer-left" id="sidebar-left"></div>' +
+				'<div class="snap-drawer snap-drawer-right" id="sidebar-right"></div>' +
+			'</div>' +
+			'<div class="snap-content">' +
+				'<header class="app-header">' +
+					'<a class="nav-toggle-left" data-role="left">☰</a>' +
+					'<h1>Fallen London</h1>' +
+					'<a class="nav-toggle-right" data-role="right">☰</a>' +
+				'</header>' +
+			'</div>' +
+		'</div>'
+	).appendTo('body');
+	$('body > *').not('#content').appendTo(newStruct);
+	// }}}
+	// Sidebar config {{{
+	$.sidebars = new Snap({
+		element: document.getElementById('content'),
+		maxPosition: 160,
+		minPosition: -160,
+		hyperextensible: false
+	});
+	// }}}
+	// Event handlers {{{
+	$('.nav-toggle-left').live('click', function() {
+		if ($.sidebars.state().state == "left") {
+			$.sidebars.close();
+		} else {
+			$.sidebars.open('left');
+		}
+	});
+	$('.nav-toggle-right').live('click', function() {
+		if ($.sidebars.state().state == "right") {
+			$.sidebars.close();
+		} else {
+			$.sidebars.open('right');
+		}
+	});
+	// }}}
+	// Move LHS sidebar into right sideout {{{
+	$('#lhs_col').appendTo('#sidebar-right');
+	// }}}
+});
+// }}}
 </script>
+<style>
+/* App config {{{ */
+body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.app .app-header {
+	overflow: hidden;
+	background: #382C41;
+	border-bottom: solid 2px #ffaa42;
+	text-align: center;
+	text-shadow: 1px 1px 0 #2D2E27;
+}
+
+.app .app-header h1 {
+	display: inline-block;
+	margin: 0;
+	font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+	line-height: 50px;
+	color: #8F5DB6;
+}
+
+.app .nav-toggle-left, .app .nav-toggle-right {
+	position: relative;
+	float: left;
+	display: block;
+	width: 50px;
+	height: 30px;
+	margin: 10px;
+	background: #1E1E21;
+	border: solid 1px rgba(230,74,51,0.35);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: inset 0 1px 0 #fcfdf4;
+	-moz-box-shadow: inset 0 1px 0 #fcfdf4;
+	box-shadow: inset 0 1px 0 #fcfdf4;
+	white-space: nowrap;
+	color: #e64a33;
+	line-height: 29px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.app .app-header .nav-toggle-left {
+	float: left;
+}
+
+.app .app-header .nav-toggle-right {
+	float: right;
+}
+/* }}} */
+
+/* Sidebar config {{{ */
+.snap-drawers {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: auto;
+	height: auto;
+}
+
+.snap-drawers .snap-drawer-left, .snap-drawers .snap-drawer-right {
+	position: absolute;
+	top: 0;
+	right: auto;
+	bottom: 0;
+	left: auto;
+	width: 160px;
+	height: auto;
+	overflow: auto;
+	background: #1E1E21;
+	color: #eee;
+}
+
+.snap-drawers .snap-drawer-left {
+	left: -160px;
+	z-index: 1;
+}
+
+.snap-drawers .snap-drawer-right {
+	right: -160px;
+	z-index: 1;
+}
+
+.snap-content {
+	z-index: 2;
+}
+/* }}} */
+
+/* RHS menu (previously the left hand side bar in the main page) {{{ */
+#lhs_col {
+	margin-left: 10px;
+}
+/* }}} */
+
+/* Dynamic sizing of background image {{{ */
+.area_hdr {
+	width: 100%;
+	max-width: 665px;
+	display: block;
+	background-size: 100%;
+}
+/* }}} */
+
+/* Dynamic page sizing so it fits the available width {{{ */
+.outer_wrapper, .rhs_col, .content_lhs, .tab_content, .tab_content_bg, #storyletsSection, .storylet, .storylet_flavour_text {
+	width: 100%;
+}
+
+.content_lhs .content {
+	padding: 0;
+	margin: 0;
+	float: none;
+	width: 100%;
+	display: block;
+}
+/* }}} */
+
+/* BUGFIX: Background now needs to repeat if we stretch width {{{ */
+.tab_content_bg {
+	background-repeat: repeat;
+}
+/* }}} */
+/* BUGFIX: Shop gets screwed up {{{ */
+.shop-items {
+	float: left;
+	width: calc(100% - 230px);
+}
+/* }}} */
+/* BUGFIX: Travel button gets screwed up {{{ */
+.toggle-map {
+	margin-right: 30px;
+}
+/* }}} */
+/* BUGFIX: .storylets gets screwed up {{{ */
+#storyletsSection {
+	float: left;
+}
+
+.storylet-select.storylet {
+	width: calc(100% - 50px);
+}
+
+.storylet-select .storylet_rhs {
+	float: left;
+	margin-left: 90px;
+	width: auto;
+}
+/* }}} */
+/* BUGFIX: Map now needs centering {{{ */
+#topMap {
+	margin: 0 auto !important;
+}
+/* }}} */
+</style>
