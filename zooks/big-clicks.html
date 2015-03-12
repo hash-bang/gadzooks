@@ -1,0 +1,18 @@
+<script type="application/zook">
+{
+	"default": false,
+	"title": "Click anywhere on item to trigger",
+	"description": "For the larger handed gentleman - remove the 'Go' buttons and make the entire option clickable"
+}
+</script>
+<style>
+.storylet-select {
+	cursor: pointer;
+}
+</style>
+<script>
+$('.storylet-select').live('click', function(e) {
+	e.stopPropagation();
+	$(debug).find('input[type=button]').click();
+});
+</script>
