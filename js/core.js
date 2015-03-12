@@ -245,6 +245,7 @@ $(function() {
 			"zooks/remove-prompts.html",
 			"zooks/remove-rhb.html",
 			"zooks/remove-share-feed.html",
+			"zooks/remove-welcome.html",
 			"zooks/rotated-tabs.html",
 			"zooks/stats-cozy.html",
 			"zooks/stats-move-right.html",
