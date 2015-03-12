@@ -225,6 +225,7 @@ $(function() {
 			// Load individual zook files {{{
 			"zooks/back-bigger.html",
 			"zooks/back-center.html",
+			"zooks/big-clicks.html",
 			"zooks/core-detect-tab-change.html",
 			"zooks/disable-select.html",
 			"zooks/display-card-frequency.html",
