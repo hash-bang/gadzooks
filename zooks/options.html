@@ -2,6 +2,7 @@
 {
 	"forced": true,
 	"title": "Gadzooks options configurator",
+	"category": "Gadzooks!",
 	"description": "Toggle Gadzook options to your hearts content via a snazzy popup",
 	"requires": ["core-angular"]
 }
@@ -11,9 +12,16 @@ $.gadzooks.options = function() {
 	$('#gadzooks-options').toggle();
 
 	if (!$.gadzooks.optionsLoaded) {
-		$.each($.gadzooks.loaded, function(id, zook) {
+		var lastCategory = null;
+		$.each(_.sortByAll($.gadzooks.loaded, ['category', 'title']), function(id, zook) {
 			// Angular, Angular, My Kingdom for the use of Angular!
 			if (zook.hide) return; // If hidden - skip
+			if (!lastCategory || zook.category != lastCategory) { // Started a new category
+				$('.gadzooks-options-content').append($(
+					'<div class="gadzooks-option-header">' + zook.category + '</div>'
+				));
+				lastCategory = zook.category;
+			}
 			$('.gadzooks-options-content').append($(
 				'<div class="gadzooks-option" data-zook="' + zook.id + '">' +
 					(!zook.forced ? ('<div class="gz-check"><input type="checkbox"' + (zook.state ? ' checked="checked"' : '') + '/><label></label></div>') : '<div class="gz-check-disabled">Locked</div>') +
@@ -50,6 +58,17 @@ $('.gadzooks-option input[type=checkbox]').live('change', function() {
 	padding: 20px;
 	overflow-y: auto;
 	z-index: 10000;
+}
+
+#gadzooks-options .gadzooks-option-header {
+	color: black;
+	margin: 30px 0 10px 0;
+	border-bottom: 1px solid #666;
+	font-size: 16pt;
+}
+
+#gadzooks-options .gadzooks-option-header:first-child {
+	margin-top: 0px;
 }
 
 #gadzooks-options .gadzooks-option {
