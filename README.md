@@ -89,7 +89,32 @@ No. Gadzooks! is a *temporary* set of tools that gets injected into the web page
 The only major thing Gadzooks! could be said to do that could be considered 'bad' is that it disables the help system for FL. We do this so people do not bother Failbetter with complaints which may be the fault of Gadzooks!
 
 
+**I want to help!**
+
+Yey! Fork the [repo](https://github.com/hash-bang/gadzooks) and submit a pull-request when you have something working. Many hands, light work and so on.
+
+
 **Who are you?**
 My name is [Matt Carter](https://github.com/hash-bang) and I'm a senior developer at [Mom's Friendly Development Company](http://mfdc.biz).
 
 Within FL I go by the username `Cac0nym`.
+
+
+Troubleshooting
+---------------
+
+**I can't get this working with Android Chrome**
+
+For some dementend reason Chrome doesn't accept JavaScript bookmarks if 'Merge tabs and apps' if Off. Try setting that to 'On' before filing a bug report.
+
+
+**Pages are all screwed up / styles are b0rked / things break when I do 'X'**
+
+Dang. I do try to test these things but the original game is a nest of weird code and styles. 
+
+Please file a [bug report](https://github.com/hash-bang/gadzooks/issues) giving a few brief descriptions on whats screwed up and possibly a screen shot. I'll try and look at it when I can.
+
+
+**Something has gone wrong that isn't covered here**
+
+Please file a [bug report](https://github.com/hash-bang/gadzooks/issues) giving a few brief descriptions on whats screwed up and possibly a screen shot. I'll try and look at it when I can.
