@@ -14,6 +14,7 @@
 <script>
 $('.storylet-select').live('click', function(e) {
 	e.stopPropagation();
-	$(debug).find('input[type=button]').click();
+	var button = $(this).find('input[type=button], input[type=submit]').first();
+	console.log('WOULD CLICK', button);
 });
 </script>
