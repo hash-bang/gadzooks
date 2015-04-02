@@ -235,6 +235,7 @@ $(function() {
 			"zooks/help-disable.html",
 			"zooks/help-remove-tab.html",
 			"zooks/loader.html",
+			"zooks/mobile-fixed-header.html",
 			"zooks/mobile.html",
 			"zooks/move-graphic.html",
 			"zooks/options-f12.html",
