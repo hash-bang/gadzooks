@@ -18,7 +18,7 @@ $(function() {
 		* This must sync with inject.js
 		* @var string
 		*/
-		url: 'http://gadzooks.ap01.aws.af.cm',
+		url: 'http://gadzooks.hashbang.net',
 
 		/**
 		* Hash of loaded objects

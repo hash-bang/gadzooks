@@ -32,7 +32,7 @@ Install via bookmarklet
 Create a bookmark with the following URL: 
 
 ```
-javascript:$('body').append('<script src="http://gadzooks.ap01.aws.af.cm/inject.js"></script>')
+javascript:$('body').append('<script src="http://gadzooks.hashbang.net/inject.js"></script>')
 ```
 
 
