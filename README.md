@@ -2,7 +2,7 @@ Gadzooks!
 =========
 A miscellany of adornments, accoutrements and other such trappings to the popular [Fallen London](http://fallenlondon.storynexus.com) browser game.
 
-Gadzooks! is in no way associated with Failbetter games and provides absolutely no support for its use
+Gadzooks! is in no way associated with Failbetter games and provides absolutely no support for its use.
 
 Here be dragons, and so forth.
 
@@ -21,40 +21,43 @@ Install via Greasemonkey
 
 Install via bookmarklet
 -----------------------
-1. Create a new bookmarklet with the below URL
+1. Create a new bookmarklet with the URL `javascript:$('body').append('<script src="http://gadzooks.hashbang.net/inject.js"></script>')`
 2. Visit the [Fallen London](http://fallenlondon.storynexus.com) website
-3. Open the bookmarklet
-4. Configure Gadzooks! to your hearts content. By default a new tab should be created allowing access to the Gadzooks! options screen or you can press F12.
+3. Open the bookmarklet - while the FL page is open, do not open another tab or window first
+4. Configure Gadzooks! By default a new tab should be created allowing access to the Gadzooks! options screen or you can press F12.
 
 
-**Bookmarklet**
+Install on your phone
+---------------------
+This feature is very very much experimental.
 
-Create a bookmark with the following URL: 
+1. Open your favourite browser - Chrome is recommended on Android
+2. Create a bookmark with the following URL: `javascript:$('body').append('<script src="http://gadzooks.hashbang.net/inject.js"></script>`
+3. Visit the [Fallen London](http://fallenlondon.storynexus.com) website in the browser
+4. Open the above bookmark - Gadzooks should now load. If you keep the page open in your browser Gadzooks! should remain loaded when switching to another app
 
-```
-javascript:$('body').append('<script src="http://gadzooks.hashbang.net/inject.js"></script>')
-```
+See the [Troubleshooting](#troubleshooting) if you get yourself into a pickle.
 
 
 
 What Gadzooks! Does
--------------------
+===================
 Gadzooks! provides a series of browser injections in a manageable, modular way.
-It was originally written because I feel that the lack of mobile support for Fallen London is severely lacking and could be rectified. However some of the changes I made might not be to everyones liking so I started to split them up into optional modules.
+It was originally written because I felt that the lack of mobile support for Fallen London is severely lacking and could be rectified with a few CSS hacks. However some of the changes I made might not be to everyones liking so I started to split them up into optional modules.
 
 Gadzooks! has a number of supported 'Zooks' which can provide functionality anywhere from CSS fixes to full JavaScript patching.
 
 
 FAQ
----
+===
 **Does Gadzooks! work on mobile devices?**
 
-Absolutely. Use the same technique to load Gadzooks! via a bookmarklet and you get a fancy almost-an-app experience.
+Absolutely. Use the same technique to load Gadzooks! via a bookmarklet and you get a fancy almost-an-app experience. See the [Install on your phone](#install-on-your-phone) section for more information.
 
 
 **Is there any support for Gadzooks?**
 
-In a way yes. If you have noticed an error please [create a ticket](https://github.com/hash-bang/gadzooks/issues) on the Gadzooks! GitHub page. **DO NOT** bother Failbetter games about this. We are in no way affiliated with the original creators of FL and them receiving complaints about our module will probably end up in someone getting mad.
+In a way yes. If you have noticed an error please [create a ticket](https://github.com/hash-bang/gadzooks/issues) on the Gadzooks! GitHub page. **DO NOT** bother Failbetter games about this. We are in no way affiliated with the original creators of FL and them receiving complaints about our module will probably end up in someone getting mad at us.
 
 
 **Why 'Gadzooks'?**
@@ -64,12 +67,12 @@ Its a shortened version of 'Gods Hooks' (the nails from the crucifixion). Since 
 
 **Can I cheat using Gadzooks?**
 
-No. FL is *mostly* server based. Its not possible to alter the state of your character, inventory or anything like that without going though the server.
+No. FL is *mostly* server based. Its not possible to alter the state of your character, inventory or anything like that without going though the server. Gadzooks! provides only a plesent sheen on top of the existing game.
 
 
 **I have a great idea for a new Zook (a plugin)**
 
-Thats great! File it in the [ticket tracker](https://github.com/hash-bang/gadzooks/issues) as a suggestion and we'll see what we can do.
+Thats great! File it in the [issue tracker](https://github.com/hash-bang/gadzooks/issues) as a suggestion and we'll see what we can do.
 
 You may also wish to check out the [zook tips](zooks.md) for some tips on writing Zooks.
 
@@ -79,9 +82,18 @@ You may also wish to check out the [zook tips](zooks.md) for some tips on writin
 Again, great. Either fork the [original repo](https://github.com/hash-bang/gadzooks) and [create a pull request](https://help.github.com/articles/creating-a-pull-request) for whatever you come up with so everyone can benefit.
 
 
+**I am a designer and wish to help**
+
+Yey!
+
+My design skills suck. Any help you can offer, especially with the mobile Zook would be very much appreciated.
+
+Create a post in the [issue tracker](https://github.com/hash-bang/gadzooks/issues) about how you can help.
+
+
 **Does Gadzooks! do anything perminant?**
 
-No. Gadzooks! is a *temporary* set of tools that gets injected into the web page only when you request it. A simple page refresh will put everything back to normal.
+No. Gadzooks! is a *temporary* set of hacks that gets injected into the web page only when you permit it to load. A simple page refresh will set everything back to normal.
 
 
 **Does Gadzooks! do anything bad?**
@@ -95,22 +107,23 @@ Yey! Fork the [repo](https://github.com/hash-bang/gadzooks) and submit a pull-re
 
 
 **Who are you?**
-My name is [Matt Carter](https://github.com/hash-bang) and I'm a senior developer at [Mom's Friendly Development Company](http://mfdc.biz).
+
+My name is [Matt Carter](https://github.com/hash-bang) and I'm a senior developer at [Mom's Friendly Development Company](http://mfdc.biz), occasional lecturer and collector of rats-on-strings.
 
 Within FL I go by the username `Cac0nym`.
 
 
 Troubleshooting
----------------
+===============
 
 **I can't get this working with Android Chrome**
 
-For some dementend reason Chrome doesn't accept JavaScript bookmarks if 'Merge tabs and apps' if Off. Try setting that to 'On' before filing a bug report.
+For some demented reason Chrome doesn't accept JavaScript bookmarks if 'Merge tabs and apps' if Off in settings. Try setting that to 'On' and reloading.
 
 
 **Pages are all screwed up / styles are b0rked / things break when I do 'X'**
 
-Dang. I do try to test these things but the original game is a nest of weird code and styles. 
+Dang. I do try to test these things but the original game is a nest of weird code and styles. This is not helped by adding more and more hacks on top of that.
 
 Please file a [bug report](https://github.com/hash-bang/gadzooks/issues) giving a few brief descriptions on whats screwed up and possibly a screen shot. I'll try and look at it when I can.
 
