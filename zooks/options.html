@@ -10,6 +10,11 @@
 <script>
 $.gadzooks.options = function() {
 	$('#gadzooks-options').toggle();
+	if ($('#gadzooks-options').is(':visible')) {
+		$('body').addClass('gadzooks-options-open');
+	} else {
+		$('body').removeClass('gadzooks-options-open');
+	}
 
 	if (!$.gadzooks.optionsLoaded) {
 		var lastCategory = null;
@@ -113,6 +118,12 @@ $('.gadzooks-option input[type=checkbox]').live('change', function() {
 	height: 40px;
 	padding: 10px 20px !important;
 }
+
+/* BUGFIX: Disable scrolling on body element when options is visible {{{ */
+body.gadzooks-options-open {
+	overflow: hidden !important;
+}
+/* }}} */
 </style>
 <div id="gadzooks-options" style="display: none">
 	<div class="gadzooks-options-content"></div>
