@@ -1,0 +1,19 @@
+<script type="application/zook">
+{
+	"default": false,
+	"title": "Remove all journal related buttons",
+	"category": "UI alteration",
+	"description": "I remember all! Remove all journal related functionality - e.g. 'Record this in your journal' buttons"
+}
+</script>
+<style>
+.storylet_flavour_text form {
+	display: none;
+}
+
+/* BUGFIX: Remove large vertical spacing now we've removed the buttons {{{ */
+.storylet_flavour_text > div.clearfix {
+	margin-top: 0 !important;
+}
+/* }}} */
+</style>

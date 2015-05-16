@@ -250,6 +250,7 @@ $(function() {
 			"zooks/remove-footers.html",
 			"zooks/remove-graphic.html",
 			"zooks/remove-headers.html",
+			"zooks/remove-journal.html",
 			"zooks/remove-latest-news.html",
 			"zooks/remove-prompts.html",
 			"zooks/remove-rhb.html",
