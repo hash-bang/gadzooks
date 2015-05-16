@@ -18,7 +18,13 @@ $(function() {
 		* This must sync with inject.js
 		* @var string
 		*/
-		url: 'http://gadzooks.hashbang.net',
+		url: window.gadzooksDebug ? 'http://localhost' : 'http://gadzooks.hashbang.net',
+
+		/**
+		* Whether we are running in debug mode (determined in bootstrap by window.gadzooksDebug existing)
+		* @var boolean
+		*/
+		debug: !!window.gadzooksDebug,
 
 		/**
 		* Hash of loaded objects
@@ -68,7 +74,7 @@ $(function() {
 			$.ajax({
 				type: 'GET',
 				dataType: 'text',
-				cache: true,
+				cache: false,
 				url: $.gadzooks.url + '/' + file,
 				error: function(err) {
 					console.log('Error while loading zook', err);
@@ -153,6 +159,7 @@ $(function() {
 				if (!$.gadzooks.initLoading) {
 					console.log('$.gadzooks.init/check: ready');
 					$.gadzooks.ready = true;
+					if ($.gadzooks.debug) console.log('LOADING GADZOOKS! IN DEBUG MODE');
 					$(document).trigger('gadzooks.ready');
 				} else {
 					console.log('$.gadzooks.init/check: fail, retry');
