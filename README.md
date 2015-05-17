@@ -9,6 +9,21 @@ Gadzooks! is in no way associated with Failbetter games and provides absolutely 
 Here be dragons, and so forth.
 
 
+Random Screenshots
+------------------
+The following show the 'Mobile' zook when its enabled on an Android device:
+
+![Screenshot 01](docs/screenshots/01.png)
+![Screenshot 05](docs/screenshots/05.png)
+![Screenshot 07](docs/screenshots/07.png)
+![Screenshot 08](docs/screenshots/08.png)
+![Screenshot 10](docs/screenshots/10.png)
+
+
+More previews can be found in the [screenshots directory](docs/screenshots).
+
+
+
 Install via Greasemonkey
 -----------------------------
 1. Download GreaseMonkey for your preferred browser:
