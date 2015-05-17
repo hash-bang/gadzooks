@@ -14,6 +14,7 @@ Random Screenshots
 The following show the 'Mobile' zook when its enabled on an Android device:
 
 ![Screenshot 01](docs/screenshots/01.png)
+![Screenshot 04](docs/screenshots/04.png)
 ![Screenshot 05](docs/screenshots/05.png)
 ![Screenshot 07](docs/screenshots/07.png)
 ![Screenshot 08](docs/screenshots/08.png)
