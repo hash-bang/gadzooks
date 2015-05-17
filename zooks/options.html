@@ -12,6 +12,7 @@ $.gadzooks.options = function() {
 	$('#gadzooks-options').toggle();
 	if ($('#gadzooks-options').is(':visible')) {
 		$('body').addClass('gadzooks-options-open');
+		if ($.sidebars) $.sidebars.close();
 	} else {
 		$('body').removeClass('gadzooks-options-open');
 	}
