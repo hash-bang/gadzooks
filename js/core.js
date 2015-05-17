@@ -18,7 +18,7 @@ $(function() {
 		* This must sync with inject.js
 		* @var string
 		*/
-		url: window.gadzooksDebug ? 'http://localhost' : 'http://hash-bang.github.io/gadzooks',
+		url: window.gadzooksDebug ? 'http://localhost' : 'http://gadzooks.hashbang.net',
 
 		/**
 		* Whether we are running in debug mode (determined in bootstrap by window.gadzooksDebug existing)
