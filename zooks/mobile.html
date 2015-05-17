@@ -4,7 +4,7 @@
 	"title": "Mobile support",
 	"category": "Mobile",
 	"description": "Provide EXPERIMENTAL support for mobile browsers. Becomes enabled when the view area is small enough. Requires a page reload when disabled",
-	"requires": ["options", "remove-latest-news", "remove-headers", "remove-footers", "remove-welcome", "remove-share-feed", "remove-rhb"]
+	"requires": ["options", "loader", "remove-latest-news", "remove-headers", "remove-footers", "remove-welcome", "remove-share-feed", "remove-rhb"]
 }
 </script>
 <script>
@@ -229,6 +229,22 @@ body {
 
 /* IMPLIED ZOOKS {{{ */
 /* At the moment Gadzooks can't load pre-requisite plugins so we have to do its work for it by loading in the CSS that we need*/
+/* zooks/loader {{{ */
+#mainContentLoading {
+	margin-left: -40px !important;
+	margin-top: -50px;
+	display: block;
+	position: fixed;
+	top: 300px;
+	z-index: 10000;
+	left: 50%;
+	border-radius: 10px;
+	border: 2px solid #817766;
+	box-shadow: 6px 6px 3px rgba(77, 77, 77, 0.6);
+	background-repeat: repeat;
+	background-image: url(http://images.echobazaar.failbettergames.com.s3.amazonaws.com/tabs/parchtile.jpg);
+}
+/* }}} */
 /* zooks/remove-latest-news {{{ */
 #latestNewsBar {
 	display: none;
