@@ -234,6 +234,7 @@ $(function() {
 			"zooks/back-center.html",
 			"zooks/big-clicks.html",
 			"zooks/core-detect-tab-change.html",
+			"zooks/core-first-start.html",
 			"zooks/disable-select.html",
 			"zooks/display-card-frequency.html",
 			"zooks/display-challenge-details.html",

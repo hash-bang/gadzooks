@@ -1,0 +1,26 @@
+<script type="application/zook">
+{
+	"hide": true,
+	"forced": true,
+	"title": "Core - First boot prompt",
+	"category": "Core",
+	"description": "Detects if Gadzooks! has never been loaded before and prompts the user"
+}
+</script>
+<script>
+setTimeout(function() {
+	var booted = localStorage.getItem('gadzooks.hasBooted');
+	localStorage.setItem('gadzooks.hasBooted', 1)
+
+	if (!booted) {
+		if ($('body').width() < 500) {
+			if (confirm("It looks like you\'ve not used Gadzooks! before and you\'re using a mobile device\n\nWould you like to enable Mobile mode?")) {
+				$.gadzooks.setState('mobile', true, true);
+				alert('You can configure Gadzooks! by using the option in the left hand menu');
+			}
+		} else if (confirm("It looks like you\'ve not used Gadzooks! before\n\nWould you like to view the options screen?")) {
+			$.gadzooks.options();
+		}
+	}
+}, 2000);
+</script>
