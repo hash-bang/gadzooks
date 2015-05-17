@@ -109,6 +109,11 @@ The only major thing Gadzooks! could be said to do that could be considered 'bad
 Yey! Fork the [repo](https://github.com/hash-bang/gadzooks) and submit a pull-request when you have something working. Many hands, light work and so on.
 
 
+**Why don't you use GitHub.io to host?**
+
+Unfortunately GitHub.io does not provide access for [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) enabled sites. We have to use a work-around domain to make everything load correctly.
+
+
 **Who are you?**
 
 My name is [Matt Carter](https://github.com/hash-bang) and I'm a senior developer at [Mom's Friendly Development Company](http://mfdc.biz), occasional lecturer and collector of rats-on-strings.
