@@ -213,6 +213,11 @@ body {
 }
 /* }}} */
 
+/* BUGFIX: Remove useless footer {{{ */
+.tab_content_ftr {
+	display: none;
+}
+/* }}} */
 /* BUGFIX: Hide mooted tab bar {{{ */
 #tabnav {
 	display: none !important;
@@ -241,6 +246,7 @@ body {
 
 .storylet, .storylet_flavour_text {
 	width: calc(100% - 50px);
+	padding: 10px;
 }
 
 .storylet-select .storylet_rhs {
@@ -249,7 +255,7 @@ body {
 }
 
 .storylet_rhs {
-	width: auto;
+	width: calc(100% - 100px) !important;
 }
 /* }}} */
 /* BUGFIX: Ranking screens get screwed up {{{ */
@@ -276,6 +282,26 @@ body {
 /* BUGFIX: Map now needs centering {{{ */
 #topMap {
 	margin: 0 auto !important;
+}
+/* }}} */
+/* BUGFIX: Challenge info areas should take up 100% of width otherwise they look odd {{{ */
+.challenge {
+	width: 100%;
+}
+/* }}} */
+/* BUGFIX: Buttons dont line up properly {{{ */
+#mainContentViaAjax > div > input[type=button] {
+	float: none !important;
+	margin: 0 auto;
+	width: 50% !important;
+	font-size: 20px;
+	height: 40px;
+	margin-bottom: 10px;
+	padding: 10px 20px !important;
+}
+
+#mainContentViaAjax > div.clear {
+	display: none;
 }
 /* }}} */
 </style>
