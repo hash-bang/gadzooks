@@ -68,6 +68,18 @@ $.getScript($.gadzooks.url + '/lib/snap.min.js', function() {
 	// Right Sidebar - Move LHS sidebar into right sideout {{{
 	$('#lhs_col').appendTo('#sidebar-right');
 	// }}}
+	// BUGFIX: Deal with annoying click => touchend mapping on some mobile browsers {{{
+	$('#sidebar-left a').bind('touchend', function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		if ($(this).attr('id') == 'gadzooksTab') {
+			$.gadzooks.options();
+		} else {
+			$(this).trigger('click');
+		}
+		$.sidebars.close();
+	});
+	// }}}
 });
 // }}}
 </script>
