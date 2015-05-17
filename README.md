@@ -1,3 +1,5 @@
+![Gadzooks!](logo.png)
+
 Gadzooks!
 =========
 A miscellany of adornments, accoutrements and other such trappings to the popular [Fallen London](http://fallenlondon.storynexus.com) browser game.
