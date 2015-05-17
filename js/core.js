@@ -245,6 +245,7 @@ $(function() {
 			"zooks/mobile-fixed-header.html",
 			"zooks/mobile.html",
 			"zooks/options-f12.html",
+			"zooks/options-nav.html",
 			"zooks/options-tab.html",
 			"zooks/options.html",
 			"zooks/remove-footers.html",

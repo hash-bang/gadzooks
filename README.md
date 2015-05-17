@@ -16,7 +16,7 @@ Install via Greasemonkey
 	* **Safari** [via hacks](http://www.simplehelp.net/2007/11/14/how-to-run-greasemonkey-scripts-in-safari/)
 2. Install the script by [clicking here](https://github.com/hash-bang/gadzooks/raw/master/gadzooks.greasemonkey.user.js)
 3. Visit the [Fallen London](http://fallenlondon.storynexus.com) website
-4. Configure Gadzooks! to your hearts content. By default a new tab should be created allowing access to the Gadzooks! options screen or you can press F12.
+4. Configure Gadzooks! By default a new tab should be created allowing access to the Gadzooks! options screen, you can also access Gadzooks! via the link in the the top right of your screen next to your login name or you can press F12.
 
 
 Install via bookmarklet
@@ -24,7 +24,7 @@ Install via bookmarklet
 1. Create a new bookmarklet with the URL `javascript:$('body').append('<script src="http://gadzooks.hashbang.net/inject.js"></script>')`
 2. Visit the [Fallen London](http://fallenlondon.storynexus.com) website
 3. Open the bookmarklet - while the FL page is open, do not open another tab or window first
-4. Configure Gadzooks! By default a new tab should be created allowing access to the Gadzooks! options screen or you can press F12.
+4. Configure Gadzooks! By default a new tab should be created allowing access to the Gadzooks! options screen, you can also access Gadzooks! via the link in the the top right of your screen next to your login name or you can press F12.
 
 
 Install on your phone
@@ -35,6 +35,7 @@ This feature is very very much experimental.
 2. Create a bookmark with the following URL: `javascript:$('body').append('<script src="http://gadzooks.hashbang.net/inject.js"></script>`
 3. Visit the [Fallen London](http://fallenlondon.storynexus.com) website in the browser
 4. Open the above bookmark - Gadzooks should now load. If you keep the page open in your browser Gadzooks! should remain loaded when switching to another app
+5. Configure Gadzooks! By default a new tab should be created allowing access to the Gadzooks! options screen, you can also access Gadzooks! via the link in the the top right of your screen next to your login name or you can press F12.
 
 See the [Troubleshooting](#troubleshooting) if you get yourself into a pickle.
 

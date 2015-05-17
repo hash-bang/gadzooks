@@ -1,0 +1,12 @@
+<script type="application/zook">
+{
+	"default": true,
+	"title": "Add Gadzooks link next to login",
+	"category": "Gadzooks!",
+	"description": "Display the Gadzooks! options window via a button in the nav bar",
+	"requires": ["options"]
+}
+</script>
+<script>
+$('#usernav ul').prepend('<li class="usernav-item"><a id="gadzooksTab" href="javascript:$.gadzooks.options()">GADZOOKS!</a></li>');
+</script>
