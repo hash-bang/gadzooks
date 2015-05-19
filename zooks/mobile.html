@@ -347,9 +347,11 @@ body {
 	width: calc(100% - 10px);
 }
 /* }}} */
-/* BUGFIX: Map now needs centering {{{ */
+/* BUGFIX: Map too large for mobile aspect {{{ */
 #topMap {
-	margin: 0 auto !important;
+	margin: 0 0 0 -17px !important;
+	width: 100% !important;
+	overflow: auto !important;
 }
 /* }}} */
 /* BUGFIX: Challenge info areas should take up 100% of width otherwise they look odd {{{ */
