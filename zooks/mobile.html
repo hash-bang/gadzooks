@@ -46,6 +46,30 @@ $.getScript($.gadzooks.url + '/lib/snap.min.js', function() {
 		hyperextensible: false
 	});
 	// }}}
+	// Map navigation {{{
+	$('#topMap')
+		.after($('<div id="mapNav" style="display: none"><button class="mapNav-left">&larr;</button><button class="mapNav-right">&rarr;</button></div>'));
+
+	$('.toggle-map').live('click', function() {
+		// Toggle the button availability along with the map toggle
+		$('#mapNav').toggle(!$('#topMap').is(':visible'));
+		$('$topMap').scrollLeft(0);
+		$.mapOffset = 0;
+	});
+
+	$.mapOffset = 0;
+	$('#mapNav button').live('click', function() {
+		if ($(this).hasClass('mapNav-left')) {
+			$.mapOffset -= 25;
+			if ($.mapOffset < 0) $.mapOffset = 0;
+		} else if ($(this).hasClass('mapNav-right')) {
+			$.mapOffset += 25;
+			if ($.mapOffset > $('#topMap').width() - 35) $.mapOffset = $('#topMap').width() + 35;
+		}
+		console.log('SCROLL', $.mapOffset);
+		$('#topMap').scrollLeft($.mapOffset);
+	});
+	// }}}
 	// Event handlers {{{
 	$('.nav-toggle-left').live('click', function() {
 		if ($.sidebars.state().state == "left") {
@@ -279,6 +303,23 @@ body {
 	display: none;
 }
 /* }}} */
+/* }}} */
+
+/* Map navigation {{{ */
+#mapNav {
+	text-align: center;
+	margin: 0 auto 20px;
+}
+
+#mapNav button {
+	font-size: 40px;
+	background: #382C41;
+	border-radius: 15px;
+	border: 1px solid #FFAA42;
+	color: #EFE9E1;
+	width: 50px;
+	padding: 0px 0px 5px;
+}
 /* }}} */
 
 /* BUGFIX: Remove useless footer {{{ */
