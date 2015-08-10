@@ -1,0 +1,22 @@
+<script type="application/zook">
+{
+	"forced": true,
+	"title": "Add notice to help screen",
+	"category": "UI alteration",
+	"description": "Adds a notice to the help screen that you should really disable Gadzooks! before complaining about bugs"
+}
+</script>
+<script>
+$(document).bind('gadzooks.tab.help', function() {
+	$('#mainContentViaAjax').prepend(
+		'<div class="FAQ ui-accordion ui-widget ui-helper-reset ui-accordion-icons FAQ">' +
+			'<div class="ui-accordion-content ui-helper-reset ui-widget-content ui-accordion-content-active FAQ">' +
+				'<h1 class="faq-header">Warning, you have Gadzooks! enabled</h1>' +
+				'<p>Reload the web page by hitting Ctrl+R, F5 or the refresh button to remove Gadzooks! before you file any issues with Failbetter games.</p>' +
+				'<p>If you are experiencing issues with the game <strong>for the love of devils</strong> please try again without Gadzooks! before filing a bug report.</p>' +
+				'<p class="help-links"><a href="https://github.com/hash-bang/gadzooks/issues" target="_blank">Report an issue with Gadzooks!</a></p>' +
+			'</div>' +
+		'</div>'
+	);
+});
+</script>

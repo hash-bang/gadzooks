@@ -239,7 +239,7 @@ $(function() {
 			"zooks/display-card-frequency.html",
 			"zooks/display-challenge-details.html",
 			"zooks/fagin.html",
-			"zooks/help-disable.html",
+			"zooks/help-notice.html",
 			"zooks/help-remove-tab.html",
 			"zooks/larger-actions.html",
 			"zooks/larger-echos.html",
