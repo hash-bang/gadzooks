@@ -2,7 +2,7 @@
 
 A miscellany of adornments, accoutrements and other such trappings to the popular [Fallen London](http://fallenlondon.storynexus.com) browser game.
 
-Gadzooks! is in no way associated with Failbetter games and provides absolutely no support for its use.
+Gadzooks! is in no way associated with Failbetter games. Use of this browser script is entirely at your own risk.
 
 Here be dragons, and so forth.
 
