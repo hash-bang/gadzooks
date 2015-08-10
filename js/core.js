@@ -245,6 +245,7 @@ $(function() {
 			"zooks/larger-echos.html",
 			"zooks/larger-time.html",
 			"zooks/loader.html",
+			"zooks/misty.html",
 			"zooks/mobile-fixed-header.html",
 			"zooks/mobile.html",
 			"zooks/options-f12.html",
