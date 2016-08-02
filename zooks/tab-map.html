@@ -19,6 +19,22 @@ button.toggle-map {
 #travelTab {
 	background: linear-gradient(to bottom, #ffdf5f 0%,#d38f1a 100%);
 }
+
+#travelTab:hover {
+	background: #ffdf5f;
+	background: -moz-linear-gradient(top,  #ffdf5f 0%, #d38f1a 100%);
+	background: -webkit-linear-gradient(top,  #ffdf5f 0%,#d38f1a 100%);
+	background: linear-gradient(to bottom,  #ffdf5f 0%,#d38f1a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffdf5f', endColorstr='#d38f1a',GradientType=0 );
+}
+
+#travelTab {
+	background: #deb151;
+	background: -moz-linear-gradient(top, #deb151 0%, #d3901a 100%);
+	background: -webkit-linear-gradient(top, #deb151 0%,#d3901a 100%);
+	background: linear-gradient(to bottom, #deb151 0%,#d3901a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#deb151', endColorstr='#d3901a',GradientType=0 );
+}
 </style>
 <script>
 $('#tabnav').append('<li class="smaller"><a id="travelTab" href="#" onclick="showMap()">TRAVEL</a></li>');
