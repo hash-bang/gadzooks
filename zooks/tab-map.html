@@ -1,0 +1,25 @@
+<script type="application/zook">
+{
+	"default": true,
+	"title": "Replace Travel button with a tab",
+	"category": "UI Alteration",
+	"description": "Saves space by removing the travel button, and having a tab for it instead"
+}
+</script>
+<style>
+ul#tabnav li {
+	width: 70px;
+}
+ul#tabnav li a, ul#tabnav li a:link, ul#tabnav li a:visited {
+	width: 75px;
+}
+button.toggle-map {
+	display: none;
+}
+#travelTab {
+	background: linear-gradient(to bottom, #ffdf5f 0%,#d38f1a 100%);
+}
+</style>
+<script>
+$('#tabnav').append('<li class="smaller"><a id="travelTab" href="#" onclick="showMap()">TRAVEL</a></li>');
+</script>
