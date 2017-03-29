@@ -50,7 +50,7 @@ Install on your phone
 This feature is very very much experimental.
 
 1. Open your favourite browser - Chrome is recommended on Android
-2. Create a bookmark with the following URL: `javascript:$('body').append('<script src="http://gadzooks.hashbang.net/inject.js"></script>`
+2. Create a bookmark with the following URL: `javascript:$('body').append('<script src="http://gadzooks.hashbang.net/inject.js"></script>')`
 3. Visit the [Fallen London](http://fallenlondon.storynexus.com) website in the browser
 4. Open the above bookmark - Gadzooks should now load. If you keep the page open in your browser Gadzooks! should remain loaded when switching to another app
 5. Configure Gadzooks! By default a new tab should be created allowing access to the Gadzooks! options screen, you can also access Gadzooks! via the link in the the top right of your screen next to your login name or you can press F12.
